@@ -1,0 +1,30 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/* @var \Ethernal\PartialInvoice\Block\Adminhtml\Order\Invoice\Partial\Form $block */
+?>
+<form id="partial_invoice_form" class="order-invoice-partial" method="post" action="<?= $block->escapeUrl($block->getSaveUrl()) ?>">
+    <?= $block->getBlockHtml('formkey') ?>
+    <?php $_order = $block->getOrder() ?>
+    <input type="hidden" name="order_id" value="<?= $block->escapeHtmlAttr($_order->getId()) ?>">
+
+    <section class="admin__page-section">
+        <table class="data-table admin__table-secondary">
+            <tbody>
+            <tr>
+                <td><label for="invoice_amount"><?= $block->escapeHtml(__('Invoice Amount')) ?></label></td>
+                <td><input class="input-text admin__control-text qty-input" max="" type="text" id="invoice_amount" name="amount"></td>
+            </tr>
+            <tr>
+                <td><span><?= $block->escapeHtml(__('Maximum value:')) ?> <?= $block->getMaxInvoiceAmount() ?></span></td>
+            </tr>
+            </tbody>
+        </table>
+        <div>
+            <button class="save save submit-button primary"><?= __('Submit') ?></button>
+        </div>
+    </section>
+</form>

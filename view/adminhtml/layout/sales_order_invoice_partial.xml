@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Ethernal\PartialInvoice\Block\Adminhtml\Order\Invoice\Partial\Form" name="sales_order_partial_invoice"
+                   template="Ethernal_PartialInvoice::order/invoice/partial/form.phtml"/>
+
+            <block class="Magento\Sales\Block\Adminhtml\Order\Totals" name="order_totals" template="Magento_Sales::order/totals.phtml">
+                <block class="Magento\Sales\Block\Adminhtml\Order\Totals\Tax" name="tax" template="Magento_Sales::order/totals/tax.phtml"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
